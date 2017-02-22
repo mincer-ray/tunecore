@@ -35,13 +35,15 @@ gem 'faker'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'annotate'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'byebug'
+  gem 'capybara'
+  gem 'launchy'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.5'
+  gem 'shoulda-matchers'
 end
 
 group :development do
