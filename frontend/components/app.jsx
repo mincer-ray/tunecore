@@ -1,11 +1,11 @@
 import React from 'react';
-import Search from './search';
+import SearchContainer from './search/search_container';
 
 const App = () => (
   <div className="app">
     <main className="main">
       <h1>Hello</h1>
-      <Search />
+      <SearchContainer />
     </main>
   </div>
 );

@@ -20,6 +20,11 @@ class Search extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.runSearch({
+      song: this.state.songName,
+      album: this.state.albumName,
+      artist: this.state.artistName
+    });
   }
 
   render() {
