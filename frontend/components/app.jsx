@@ -5,7 +5,7 @@ import ResultsContainer from './results/results_container';
 const App = () => (
   <div className="app">
     <main className="main">
-      <h1>TuneDB</h1>
+      <h1 className="pageTitle">TuneDB</h1>
       <SearchContainer />
       <ResultsContainer />
     </main>

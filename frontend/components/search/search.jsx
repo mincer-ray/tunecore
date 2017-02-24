@@ -30,25 +30,22 @@ class Search extends React.Component {
   render() {
     return(
       <div>
-        <form>
-          <label>Song Name
-            <input
-              type = "text"
-              id = "songName"
-              onChange = { this.updateSearchParams } />
-          </label>
-          <label>Album Name
-            <input
-              type = "text"
-              id = "albumName"
-              onChange = { this.updateSearchParams } />
-          </label>
-          <label>Artist Name
-            <input
-              type="text"
-              id = "artistName"
-              onChange = { this.updateSearchParams } />
-          </label>
+        <form className="searchForm">
+          <label htmlFor="songName">Song Name</label>
+          <input
+            type = "text"
+            id = "songName"
+            onChange = { this.updateSearchParams } />
+          <label htmlFor="albumName">Album Name</label>
+          <input
+            type = "text"
+            id = "albumName"
+            onChange = { this.updateSearchParams } />
+          <label htmlFor="artistName">Artist Name</label>
+          <input
+            type="text"
+            id = "artistName"
+            onChange = { this.updateSearchParams } />
           <input type="submit" onClick={ this.handleSubmit } />
         </form>
       </div>
