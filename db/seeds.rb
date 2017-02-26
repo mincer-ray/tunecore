@@ -1,41 +1,56 @@
-def generate_name
-  random_words = [
-    Faker::Team.creature.downcase,
-    Faker::Hacker.noun.downcase,
-    Faker::Hipster.word.downcase,
-    Faker::Space.moon.downcase,
-    Faker::Name.first_name.downcase,
-    Faker::Commerce.color
-  ].shuffle
+require 'json'
+require 'rest-client'
 
-  song_name = []
-  rand(1..2).times { song_name << random_words.pop }
-  song_name.join(' ')
+def generate_artists(name)
+  p name
+  artist_releases = JSON.parse(RestClient.get(
+    "http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums" \
+    "&api_key=d1ce08767dd7cb3b5fe7762e6fcb181f" \
+    "&artist=#{name}" \
+    "&format=json" \
+    "&limit=10"
+  ).body)['topalbums']['album']
+  artist = Artist.create(artist_name: artist_releases.first['artist']['name'])
+
+  generate_albums(artist_releases, artist)
 end
 
-def generate_songs
+def generate_albums(artist_releases, artist)
+  artist_releases.each do |release|
+    p release
+    tracks = JSON.parse(RestClient.get(
+      "http://ws.audioscrobbler.com/2.0/?method=album.getinfo" \
+      "&api_key=d1ce08767dd7cb3b5fe7762e6fcb181f" \
+      "&artist=#{release['artist']['name']}" \
+      "&album=#{release['name']}" \
+      "&format=json"
+    ).body)['album']['tracks']['track']
+
+    artist.albums.create(
+      album_name: release['name'],
+      songs_attributes: format_songs_attributes(tracks)
+    )
+  end
+end
+
+def format_songs_attributes(songs)
   track_list = {}
 
-  (1..10).each do |num|
-    track_list[num.to_s] = {
-      song_name: generate_name
+  songs.each_with_index do |song, i|
+    track_list[i] = {
+      song_name: song['name']
     }
   end
 
   track_list
 end
 
-10.times do
-  Artist.create(artist_name: generate_name)
-end
+artists = [
+  'prince', 'the_beatles', 'the_pixies', 'the_smiths', 'guided_by_voices',
+  'built_to_spill', 'jethro_tull', 'the_cars', 'blondie', 'kraftwerk',
+  'nas', 'pink_floyd', 'tycho'
+]
 
-artists = Artist.all
-
-artists.each do |artist|
-  10.times do
-    artist.albums.create(
-      album_name: generate_name,
-      songs_attributes: generate_songs
-    )
-  end
+artists.each do |name|
+  generate_artists(name)
 end
