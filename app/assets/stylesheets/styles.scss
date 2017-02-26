@@ -15,3 +15,28 @@ label {
   display: flex;
   flex-direction: row;
 }
+
+table {
+  border: 1px solid black;
+}
+
+td {
+  height: 50px;
+  border: 1px solid black;
+}
+
+.songKey {
+  width: 40px;
+}
+
+.songName {
+  width: 200px;
+}
+
+.artistName {
+  width: 100px;
+}
+
+.albumName {
+  width: 150px;
+}

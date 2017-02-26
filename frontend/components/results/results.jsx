@@ -17,10 +17,10 @@ class Results extends React.Component {
       const result = this.state.results[key];
       return (
         <tr key={ key }>
-          <td>{ `${key}` }</td>
-          <td>{ `${result.song}` }</td>
-          <td>{ `${result.artist}` }</td>
-          <td>{ `${result.album}` }</td>
+          <td className='songKey'>{ `${key}` }</td>
+          <td className='songName'>{ `${result.song}` }</td>
+          <td className='artistName'>{ `${result.artist}` }</td>
+          <td className='albumName'>{ `${result.album}` }</td>
         </tr>
       );
     }));
@@ -31,6 +31,12 @@ class Results extends React.Component {
       return (
         <div>
           <table>
+            <tr>
+              <th>ID</th>
+              <th>Song</th>
+              <th>Artist</th>
+              <th>Album</th>
+            </tr>
             { this.formatResults() }
           </table>
         </div>
