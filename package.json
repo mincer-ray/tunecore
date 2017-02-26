@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "description": "== README",
   "main": "index.js",
+  "engines": {
+    "node": "7.1.0",
+    "npm": "3.10.9"
+  },
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "mocha --require babel-polyfill --compilers js:babel-register frontend/test"
+    "test": "mocha --require babel-polyfill --compilers js:babel-register frontend/test",
+    "heroku-postbuild": "webpack"
   },
   "repository": {
     "type": "git",
