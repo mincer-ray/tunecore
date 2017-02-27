@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'database_cleaner'
 require 'byebug'
 
 RSpec.describe Api::SearchesController, type: :controller do
