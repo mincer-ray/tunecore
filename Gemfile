@@ -42,9 +42,10 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'byebug'
   gem 'capybara'
+  gem 'capybara-webkit'
   gem 'launchy'
   gem 'pry-rails'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails', '~> 3.0'
   gem 'shoulda-matchers'
 end
 
@@ -55,6 +56,7 @@ end
 
 group :test do
   gem 'database_cleaner'
+  gem 'factory_girl_rails'
 end
 
 group :production do

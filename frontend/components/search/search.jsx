@@ -46,7 +46,7 @@ class Search extends React.Component {
             type="text"
             id = "artistName"
             onChange = { this.updateSearchParams } />
-          <input type="submit" onClick={ this.handleSubmit } />
+          <input type="submit" id="submit" onClick={ this.handleSubmit } />
         </form>
       </div>
     );

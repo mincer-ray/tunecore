@@ -31,13 +31,17 @@ class Results extends React.Component {
       return (
         <div>
           <table>
-            <tr>
-              <th>ID</th>
-              <th>Song</th>
-              <th>Artist</th>
-              <th>Album</th>
-            </tr>
-            { this.formatResults() }
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Song</th>
+                <th>Artist</th>
+                <th>Album</th>
+              </tr>
+            </thead>
+            <tbody>
+              { this.formatResults() }
+            </tbody>
           </table>
         </div>
       );
