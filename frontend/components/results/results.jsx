@@ -30,7 +30,7 @@ class Results extends React.Component {
     if (Object.keys(this.state.results).length > 0) {
       return (
         <div>
-          <table>
+          <table className='resultsBox'>
             <thead>
               <tr>
                 <th>ID</th>

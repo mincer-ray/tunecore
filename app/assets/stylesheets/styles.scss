@@ -9,35 +9,41 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  label {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .submit {
+    margin: 10px;
+    width: 100%;
+    font-size: 16px;
+  }
 }
 
-label {
-  display: flex;
-  flex-direction: row;
-}
-
-table {
+.resultsBox {
   border: 1px solid black;
-}
 
-td {
-  text-align: center;
-  height: 50px;
-  border: 1px solid black;
-}
+  td {
+    border: 1px solid black;
+    text-align: center;
+    height: 50px;
+  }
 
-.songKey {
-  width: 40px;
-}
+  .songKey {
+    width: 40px;
+  }
 
-.songName {
-  width: 200px;
-}
+  .songName {
+    width: 200px;
+  }
 
-.artistName {
-  width: 100px;
-}
+  .artistName {
+    width: 100px;
+  }
 
-.albumName {
-  width: 150px;
+  .albumName {
+    width: 150px;
+  }
 }
