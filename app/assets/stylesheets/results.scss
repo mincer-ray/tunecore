@@ -1,0 +1,31 @@
+.resultsBox {
+  border: 1px solid black;
+
+  td {
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    height: 50px;
+  }
+
+  th {
+    padding: 5px;
+    font-weight: bold;
+  }
+
+  .songKey {
+    width: 40px;
+  }
+
+  .songName {
+    width: 200px;
+  }
+
+  .artistName {
+    width: 100px;
+  }
+
+  .albumName {
+    width: 150px;
+  }
+}

@@ -35,18 +35,19 @@ class Search extends React.Component {
           <input
             type = "text"
             id = "songName"
-            className="songNameInput"
+            className="searchText"
             onChange = { this.updateSearchParams } />
           <label htmlFor="albumName">Album Name</label>
           <input
             type = "text"
             id = "albumName"
-            className="albumNameInput"
+            className="searchText"
             onChange = { this.updateSearchParams } />
           <label htmlFor="artistName">Artist Name</label>
           <input
             type="text"
             id = "artistName"
+            className="searchText"
             onChange = { this.updateSearchParams } />
           <input type="submit" className="submit" id="submit" onClick={ this.handleSubmit } />
         </form>

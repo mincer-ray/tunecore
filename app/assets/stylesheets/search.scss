@@ -1,0 +1,32 @@
+.searchForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  label {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+  }
+
+  .searchText {
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid black;
+  }
+
+  .submit {
+    margin: 10px;
+    width: 100%;
+    font-size: 16px;
+    padding: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  .submit:hover {
+    background: #92deec;
+  }
+}

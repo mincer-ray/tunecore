@@ -12,5 +12,8 @@
  *
  *= require_tree .
  *= require_self
- *= require styles
+ *= require reset
+ *= require main
+ *= require results
+ *= require search
  */

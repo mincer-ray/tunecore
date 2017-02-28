@@ -1,6 +1,6 @@
 [heroku]: https://tunecore-db.herokuapp.com/
 
-TuneCore DB Search
+#TuneCore DB Search
 
 [TuneDB Live][heroku]
 
