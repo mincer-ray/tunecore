@@ -18,4 +18,9 @@ describe("Search Component", function() {
     const wrapper = mount(<Search />);
     expect(wrapper.find('.searchForm')).to.have.length(1);
   });
+
+  it('contains input fields', () => {
+    const wrapper = render(<Search />);
+    expect(wrapper.find('input')).to.have.length(4);
+  });
 });
