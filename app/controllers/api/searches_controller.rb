@@ -3,6 +3,7 @@ class Api::SearchesController < ApplicationController
     song_query = search_params[:song].downcase
     album_query = search_params[:album].downcase
     artist_query = search_params[:artist].downcase
+
     if song_query + album_query + artist_query == ''
       @results = []
     else
