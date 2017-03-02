@@ -4,12 +4,16 @@ class Results extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      results: this.props.results
+      results: this.props.results,
+      loading: this.props.loading
     };
   }
 
   componentWillReceiveProps(newProps) {
-    this.setState({ results: newProps.results });
+    this.setState({
+      results: newProps.results,
+      loading: newProps.loading
+    });
   }
 
   formatResults() {
@@ -27,6 +31,9 @@ class Results extends React.Component {
   }
 
   render() {
+    if (this.state.loading) {
+      return (<div className="loader">Loading...</div>);
+    }
     if (Object.keys(this.state.results).length > 0) {
       return (
         <div>

@@ -1,9 +1,11 @@
 import { connect } from 'react-redux';
 import Results from './results';
 
-function mapStateToProps({ results }) {
-  if (results === undefined) results = {};
-  return ({ results });
+function mapStateToProps({ search, loading }) {
+  return ({
+    results: search.results,
+    loading: loading.loading
+  });
 }
 
 function mapDispatchToProps(dispatch, ownProps) {

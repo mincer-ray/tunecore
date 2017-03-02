@@ -1,6 +1,6 @@
 import { RECEIVE_RESULTS, CLEAR_RESULTS } from '../actions/search_actions';
 
-const SearchReducer = (state = {results: [], random: []}, action) => {
+const SearchReducer = (state = {results: []}, action) => {
   let newState = Object.assign({}, state);
   Object.freeze(state);
 
