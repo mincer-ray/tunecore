@@ -1,7 +1,6 @@
 import { search } from '../util/search_api_util';
 
 export const RECEIVE_RESULTS = "RECEIVE_RESULTS";
-export const CLEAR_RESULTS = "CLEAR_RESULTS";
 export const LOADING_RESULTS = "LOADING_RESULTS";
 
 export const runSearch = (query) => {
@@ -21,8 +20,4 @@ export const loadingResults = () => ({
 export const receiveResults = results => ({
   type: RECEIVE_RESULTS,
   results
-});
-
-export const clearResults = () => ({
-  type: CLEAR_RESULTS
 });
